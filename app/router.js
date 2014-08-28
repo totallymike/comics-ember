@@ -5,7 +5,9 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.resource('series');
+  this.resource('series', function () {
+    this.route('show', { path: '/:series_id' })
+  })
 });
 
 export default Router;
