@@ -5,6 +5,7 @@
     "-Promise": true,
     "FrontendENV": true
   },
+  "asi": true,
   "browser" : true,
   "boss" : true,
   "curly": true,
