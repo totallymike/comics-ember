@@ -1,1 +1,6 @@
 {{outlet}}
+<ul>
+  {{#each book in model}}
+    <li>{{#link-to 'series.show' book}}{{book.title}}{{/link-to}}</li>
+  {{/each}}
+</ul>

@@ -2,8 +2,12 @@
 
 {{#with model as series}}
   <ul>
-    {{#each issues}}
-      <li>{{series.title}} #{{number}}</li>
+    {{#each issue in issues}}
+      <li>
+        {{#link-to 'issue' issue}}
+          {{series.title}} #{{issue.number}}
+        {{/link-to}}
+      </li>
     {{/each}}
   </ul>
 {{/with}}
