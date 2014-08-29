@@ -1,1 +1,9 @@
-{{title}}
+<h4>{{title}}</h4>
+
+{{#with model as series}}
+  <ul>
+    {{#each issues}}
+      <li>{{series.title}} #{{number}}</li>
+    {{/each}}
+  </ul>
+{{/with}}
