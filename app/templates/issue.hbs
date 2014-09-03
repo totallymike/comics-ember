@@ -1,1 +1,7 @@
-{{ model.number }}
+<ul>
+  {{#each page in pages}}
+    <li>{{#link-to 'page' page}}{{page.id}}{{/link-to}}</li>
+  {{/each}}
+</ul>
+
+{{outlet}}
