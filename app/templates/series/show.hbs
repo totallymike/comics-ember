@@ -1,5 +1,6 @@
 <h4>{{title}}</h4>
 {{#link-to 'series.edit' model}}Edit{{/link-to}}
+{{#link-to 'issue.new' (query-params seriesId=model.id)}}Add Issue{{/link-to}}
 {{#with model as series}}
   <ul>
     {{#each issue in issues}}

@@ -13,6 +13,7 @@ Router.map(function() {
   this.resource('issue', { path: '/issue/:issue_id' }, function () {
     this.resource('page', { path: 'page/:page_id' })
   })
+  this.resource('issue.new', { path: '/issue/new' })
 });
 
 export default Router;
