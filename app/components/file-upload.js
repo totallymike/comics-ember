@@ -7,11 +7,18 @@ export default Ember.FileField.extend({
     var files = this.get('files')
 
     var uploader = Ember.Uploader.create({
-      url: uploadUrl
+      url: uploadUrl,
+      paramNamespace: 'issue'
     })
 
+    var extraParams = this.get('issue')
+
     if (!Ember.isEmpty(files)) {
-      uploader.upload(files[0], {series_id: this.get('seriesId')})
+      var promise = uploader.upload(files[0], extraParams.serialize())
+      promise.then(function (issue) {
+        this.sendAction()
+      }.bind(this))
+
     }
   }).observes('files')
 });
