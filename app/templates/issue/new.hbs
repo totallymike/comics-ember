@@ -1,3 +1,6 @@
 {{seriesId}}
-{{input type="number" value=model.number}}
-{{file-upload url="http://localhost:3000/issues" issue=model action="publish"}}
+<form {{action "save" this on="submit"}} id='form'>
+  {{input type="number" value=model.number}}
+  {{view "file-upload" contentBinding="file"}}
+  <input type="submit" value="Enter">
+</form>
