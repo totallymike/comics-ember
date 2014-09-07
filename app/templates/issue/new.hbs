@@ -1,6 +1,5 @@
-{{seriesId}}
 <form {{action "save" this on="submit"}} id='form'>
-  {{input type="number" value=model.number}}
-  {{view "file-upload" contentBinding="file"}}
+  <p>Number: {{input type="number" value=model.number}}</p>
+  <p>File: {{view "file-upload" contentBinding="file"}}</p>
   <input type="submit" value="Enter">
 </form>

@@ -1,7 +1,8 @@
 import DS from 'ember-data';
 
 var Page = DS.Model.extend({
-  issue: DS.belongsTo('issue')
+  issue: DS.belongsTo('issue'),
+  url: DS.attr('string')
 });
 
 Page.reopenClass({

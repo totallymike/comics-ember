@@ -7,8 +7,11 @@ export default Ember.ObjectController.extend({
   actions: {
     save: function () {
       var issue = this.get('model')
+        , that = this
       issue.set('file', this.get('file'))
-      issue.save()
+      issue.save().then(function (newIsh) {
+        that.transitionTo('issue', newIsh)
+      })
     }
   }
 });
